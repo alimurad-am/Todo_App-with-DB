@@ -1,18 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo-App2</title>
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-    <form onsubmit="addTask(event)">
-        <input type="text" id="userInput">
-    <ul id="ul"></ul>
 
-    </form>
-    
+    <div class="todo-container">
+
+        <h1>Todo App</h1>
+        <p class="subtitle">Plan • Focus • Get Things Done</p>
+
+        <form onsubmit="addTask(event)">
+            <input
+                type="text"
+                id="userInput"
+                placeholder="What do you want to do?"
+            >
+
+            <button type="submit">+ Add Task</button>
+        </form>
+
+        <div class="tasks-heading">
+            <h2>Your Tasks</h2>
+        </div>
+
+        <ul id="ul"></ul>
+
+        <p class="footer-text">Small Steps • Big Goals</p>
+
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="./app.js"></script>
+
 </body>
 </html>

@@ -27,12 +27,18 @@ const showTask = async() => {
     const response = await supabaseClient.from("Todos").select("*")
     const Todos = response.data
     for(let i = 0; i < Todos.length; i++){
-   ul.innerHTML += `<li> ${Todos[i].Todo}</li>`
+   ul.innerHTML += `<li> ${Todos[i].Todo} <button onclick = "deleteTodo(${Todos[i].id})"> ❌ </button></li>`
    }
    console.log(Todos)
+
+}
+showTask();
+
+let deleteTodo = async(id) =>{
+  const deletTask =  await supabaseClient.from("Todos").delete().eq("id", id)
+  showTask()
 }
 
-showTask();
 
 // let supabase = (async() =>{
 
